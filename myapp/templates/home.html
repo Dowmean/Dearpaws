@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Feed</title>
+    <style>
+        .feed-item img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>โลกแห่งสายรุ้ง🌈</h1>
+        {% for pet in pets %}
+        <div class="feed-item">
+            <img src="{{ pet.image.url }}" alt="Image of {{ pet.name }}">
+            <h3>เนมอีสมายเดียร์: {{ pet.name }}</h3>
+            <p>วันเกิดของเธอ: {{ pet.birth_date }}</p>
+            <p>วันที่เธอไปเที่ยวดวงดาว: {{ pet.passed_away_date }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
